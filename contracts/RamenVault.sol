@@ -178,7 +178,6 @@ contract RamenVault is ERC20, Ownable {
         
         emit UpgradeStrat(stratCandidate.implementation);
 
-        IStrategy(strategy).retireStrat();
         strategy = stratCandidate.implementation;
         stratCandidate.implementation = address(0);
         stratCandidate.proposedTime = 5000000000;
